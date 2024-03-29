@@ -1,4 +1,4 @@
-# takes a folder of GLB files and processes them into 
+# takes a folder of GLB files and processes them into PLY files
 import bpy
 import glob
 import os
