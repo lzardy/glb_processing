@@ -1,4 +1,4 @@
-# takes a folder of GLB files and processes them into PLY files
+# Blender Script that takes a folder of GLB files and processes them into PLY files
 # strips textures and vertex colors leaving only vertex pos, vertex norm, index buffer
 # 1. merges model into one contiguous mesh
 # 2. scales the model to a unit sphere
