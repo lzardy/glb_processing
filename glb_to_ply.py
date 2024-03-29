@@ -11,7 +11,7 @@ import pathlib
 importDir = "GLB/"
 outputDir = "PLY0/"
 if not isdir(outputDir): mkdir(outputDir)
-
+#
 for file in glob.glob(importDir + "*.glb"):
     model_name = pathlib.Path(file).stem
     if pathlib.Path(outputDir+model_name+'.ply').is_file() == True: continue
@@ -34,6 +34,7 @@ for file in glob.glob(importDir + "*.glb"):
                             forward_axis='Y',
                             up_axis='Z'
                         )
+    
     bpy.ops.object.select_all(action='SELECT')
     bpy.ops.object.delete(use_global=False)
     bpy.ops.outliner.orphans_purge()
@@ -45,7 +46,7 @@ for file in glob.glob(importDir + "*.glb"):
 importDir = "PLY0/"
 outputDir = "PLY1/"
 if not isdir(outputDir): mkdir(outputDir)
-
+#
 counter = 0
 for file in glob.glob(importDir + "*.ply"):
     model_name = pathlib.Path(file).stem
@@ -90,12 +91,14 @@ for file in glob.glob(importDir + "*.ply"):
         bpy.ops.outliner.orphans_purge()
         bpy.ops.outliner.orphans_purge()
         counter = 0
-        
+
+# ===
 bpy.ops.object.select_all(action='SELECT')
 bpy.ops.object.delete(use_global=False)
 bpy.ops.outliner.orphans_purge()
 bpy.ops.outliner.orphans_purge()
 bpy.ops.outliner.orphans_purge()
+# ===
 
 for file in glob.glob(importDir + "*.ply"):
     model_name = pathlib.Path(file).stem
@@ -132,6 +135,7 @@ for file in glob.glob(importDir + "*.ply"):
                                 forward_axis='Y',
                                 up_axis='Z'
                             )
+        
     bpy.ops.object.select_all(action='SELECT')
     bpy.ops.object.delete(use_global=False)
     bpy.ops.outliner.orphans_purge()
