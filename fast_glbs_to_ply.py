@@ -7,4 +7,4 @@ root_dir = Path('/media/hpe/SG-20TB/objaverse/glbs')
 for file_path in root_dir.glob('**/*'):
     if file_path.is_file():
         mesh = trimesh.load(file_path)
-        mesh.export('/media/hpe/SG-20TB/plyverse/' + os.path.splitext(os.path.basename(file_path))[0], file_type='ply')
+        mesh.export('/media/hpe/SG-20TB/plyverse/' + os.path.splitext(os.path.basename(file_path))[0] + '.ply', file_type='ply')
