@@ -1,5 +1,5 @@
 # problem is trimesh saves the ply's with some bloat so they come out slightly larger than the glbs
-# but it does consolidate all the glb's to a single mesh files that are simpler to process
+# but it does consolidate all the glb's to single mesh files that are simpler to process
 from pathlib import Path
 import trimesh
 import os
