@@ -20,6 +20,7 @@ for file_path in root_dir.glob('**/*'):
                 meshlab_server.load_new_mesh('/tmp/o1.ply')
                 meshlab_server.save_current_mesh('/tmp/o1.ply')
                 mesh = trimesh.load('/tmp/o1.ply')
+                mesh.apply_scale(1.0/mesh.scale)
                 mesh.export(save_path, file_type='ply')
             except Exception:
                 pass
