@@ -8,15 +8,15 @@ from pathlib import Path
 import pymeshlab
 import trimesh
 import os
-meshlab_server = pymeshlab.MeshSet()
-root_dir = Path('/media/hpe/SG-20TB/objaverse/glbs')
+root_dir = Path('/media/r/SG-20TB/objaverse/glbs')
 for file_path in root_dir.glob('**/*'):
     if file_path.is_file():
-        save_path = '/media/hpe/SG-20TB/plyverse/' + os.path.splitext(os.path.basename(file_path))[0] + '.ply'
+        save_path = '/media/r/SG-20TB/plyverse/' + os.path.splitext(os.path.basename(file_path))[0] + '.ply'
         if not Path(save_path).is_file():
             try:
                 mesh = trimesh.load(file_path)
                 mesh.export('/tmp/o1.ply', file_type='ply')
+                meshlab_server = pymeshlab.MeshSet()
                 meshlab_server.load_new_mesh('/tmp/o1.ply')
                 meshlab_server.save_current_mesh('/tmp/o1.ply')
                 mesh = trimesh.load('/tmp/o1.ply')
@@ -24,5 +24,5 @@ for file_path in root_dir.glob('**/*'):
                 mesh.apply_translation(-mesh.centroid)
                 mesh.export(save_path, file_type='ply')
             except Exception:
-                with open('error_models.txt', 'a') as fd: fd.write(str(file_path)+"\n")
+                #with open('error_models.txt', 'a') as fd: fd.write(str(file_path)+"\n")
                 pass
