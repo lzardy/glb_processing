@@ -3,6 +3,7 @@
 # this segfaults on some GLB files sadly, and even so, objaverse does not convert to point clouds gracefully
 # although much easier to filter a bad point cloud than a bad mesh, the resultant quantity of files would be
 # much reduced in count over the original dataset.
+# the solution would be to ray-trace a new dense point-cloud from the triangulated meshes.
 from pathlib import Path
 import os
 import pymeshlab as ml
