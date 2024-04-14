@@ -4,6 +4,8 @@
 # the final trimesh pass saves only xyz as floats (yay) with faces ofc
 # result: one big consolidated mesh, no particles like lights or animations, no materials, in a nice condense binary format
 # a binary format well supported by pretty much all 3D software (PLY) https://paulbourke.net/dataformats/ply
+# this leaks and crashes on some GLB files, probably due to pymeshlab, I just run it in a bash while loop.
+# although it would be better to execute a process pool from the file/folder for loop
 from pathlib import Path
 import pymeshlab
 import trimesh
