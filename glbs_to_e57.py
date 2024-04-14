@@ -1,5 +1,5 @@
 # this is more useful as meshlab will export textures to e57 pointclouds (not vertex colors though)
-# all we want to train our networks on is point clouds, as all we want them to produce are pointclouds
+# all we want to train our networks on is point-clouds, as all we want them to produce are point-clouds
 # this segfaults on some GLB files sadly, and even so, objaverse does not convert to point clouds gracefully
 # although much easier to filter a bad point cloud than a bad mesh, the resultant quantity of files would be
 # much reduced in count over the original dataset.
